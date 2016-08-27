@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmmwc.github.io/"/>
-  <updated>2016-08-27T09:34:05.000Z</updated>
+  <updated>2016-08-27T09:37:16.000Z</updated>
   <id>http://xmmwc.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://xmmwc.github.io/2016/08/27/hexo-github/"/>
     <id>http://xmmwc.github.io/2016/08/27/hexo-github/</id>
     <published>2016-08-27T09:32:59.000Z</published>
-    <updated>2016-08-27T09:34:05.000Z</updated>
+    <updated>2016-08-27T09:37:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>##配置环境</p>
 <p>安装Node（必须）</p>
@@ -32,12 +32,12 @@
 <p>##正式安装Hexo</p>
 <p>Node和Git都安装好后,首先创建一个文件夹,如blog,用户存放hexo的配置文件,然后进入blog里安装Hexo。</p>
 <p>执行如下命令安装Hexo：</p>
-<p><code>sudo npm install -g hexo</code></p>
+<p><code>``bash sudo npm install -g hexo</code></p>
 <p>初始化然后，执行init命令初始化hexo,命令：</p>
-<p><code>hexo init</code></p>
+<p><code>``bash hexo init</code></p>
 <p>好啦，至此，全部安装工作已经完成！blog就是你的博客根目录，所有的操作都在里面进行。</p>
 <p>生成静态页面</p>
-<p><code>hexo generate</code>（hexo g也可以）</p>
+<p><code>``bash hexo generate</code>（hexo g也可以）</p>
 <p>本地启动</p>
 <p>启动本地服务，进行文章预览调试，命令：</p>
 <p><code>hexo server</code></p>
