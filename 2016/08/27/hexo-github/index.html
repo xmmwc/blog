@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> HEXO+Github · XMMWC's Blog</title><meta name="description" content="HEXO+Github - XMMWC"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://xmmwc.github.io/atom.xml" title="XMMWC's Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="http://xmmwc.github.io/" target="_blank" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="http://xmmwc.github.io//archives/" target="_blank" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/toxmm" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/xmmwc" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">HEXO+Github</h1><div class="post-info">2016年8月27日</div><div class="post-content"><p>##配置环境</p>
+<p>安装Node（必须）</p>
+<p>略过。</p>
+<p>安装Git（必须）</p>
+<p>略过。</p>
+<p>申请GitHub（必须）</p>
+<p>略过。</p>
+<p>##正式安装Hexo</p>
+<p>Node和Git都安装好后,首先创建一个文件夹,如blog,用户存放hexo的配置文件,然后进入blog里安装Hexo。</p>
+<p>执行如下命令安装Hexo：</p>
+<p><code>sudo npm install -g hexo</code></p>
+<p>初始化然后，执行init命令初始化hexo,命令：</p>
+<p><code>hexo init</code></p>
+<p>好啦，至此，全部安装工作已经完成！blog就是你的博客根目录，所有的操作都在里面进行。</p>
+<p>生成静态页面</p>
+<p><code>hexo generate</code>（hexo g也可以）</p>
+<p>本地启动</p>
+<p>启动本地服务，进行文章预览调试，命令：</p>
+<p><code>hexo server</code></p>
+<p>浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+<p>##配置Github</p>
+<p>建立Repository</p>
+<p>建立与你用户名对应的仓库，仓库名必须为<strong>your_user_name.github.io</strong>，固定写法。</p>
+<p>现在我们需要_config.yml文件，来建立关联，</p>
+<p>翻到最下面，改成这样子的</p>
+<pre><code>deploy:
+    type: git
+    repo: https://github.com/XXX/XXX.github.io.git
+    branch: master
+</code></pre><p>然后执行命令：</p>
+<p><code>npm install hexo-deployer-git --save</code></p>
+<p>然后，执行配置命令：</p>
+<p><code>hexo deploy</code></p>
+<p>然后再浏览器中输入<a href="http://XXX.github.io/就行了" target="_blank" rel="external">http://XXX.github.io/就行了</a></p>
+<p>##部署步骤</p>
+<p>每次部署的步骤，可按以下三步来进行。</p>
+<pre><code>`hexo clean`
+
+`hexo generate`
+
+`hexo deploy`
+</code></pre><p>一些常用命令：</p>
+<p><code>hexo new &quot;postName&quot;</code> #新建文章</p>
+<p><code>hexo new page &quot;pageName&quot;</code> #新建页面</p>
+<p><code>hexo generate</code> #生成静态页面至public目录</p>
+<p><code>hexo server</code> #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</p>
+<p><code>hexo deploy</code> #将.deploy目录部署到GitHub</p>
+<p><code>hexo help</code> # 查看帮助</p>
+<p><code>hexo version</code> #查看Hexo的版本</p>
+<p>文／潘柏信（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">http://www.jianshu.com/p/465830080ea9</a></p>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/08/26/hello-world/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://xmmwc.github.io">XMMWC</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
