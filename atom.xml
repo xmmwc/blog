@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmmwc.github.io/"/>
-  <updated>2016-08-28T14:33:41.000Z</updated>
+  <updated>2016-08-28T14:36:09.000Z</updated>
   <id>http://xmmwc.github.io/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://xmmwc.github.io/2016/08/28/ES6%E8%AE%B0%E4%B8%80%E4%B8%8B/"/>
     <id>http://xmmwc.github.io/2016/08/28/ES6记一下/</id>
     <published>2016-08-28T14:32:17.000Z</published>
-    <updated>2016-08-28T14:33:41.000Z</updated>
+    <updated>2016-08-28T14:36:09.000Z</updated>
     
-    <content type="html"><![CDATA[<p>##let and const</p>
-<blockquote>
+    <content type="html"><![CDATA[<h2 id="let-and-const"><a href="#let-and-const" class="headerlink" title="let and const"></a>let and const</h2><blockquote>
 <p>函数级作用域</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> hello = <span class="string">'world'</span>;</div><div class="line">  <span class="built_in">console</span>.log(hello);</div><div class="line">&#125;</div><div class="line">test(); <span class="comment">// 'world'</span></div><div class="line"><span class="built_in">console</span>.log(hello); <span class="comment">// Error: hello is not defined</span></div></pre></td></tr></table></figure>
@@ -37,8 +36,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> STATUS_NOT_FOUND = <span class="number">404</span>;</div></pre></td></tr></table></figure>
 <p>常量的值为只读，不能修改</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">STATUS_NOT_FOUND = <span class="number">200</span>;</div><div class="line"><span class="comment">// SyntaxError: "STATUS_NOT_FOUND" is read-only</span></div></pre></td></tr></table></figure>
-<p>##Template String</p>
-<p>传统的字符串</p>
+<h2 id="Template-String"><a href="#Template-String" class="headerlink" title="Template String"></a>Template String</h2><p>传统的字符串</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'es6'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> sayhello = <span class="string">'hello, \</div><div class="line">my name is '</span> + name + <span class="string">'.'</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(sayhello);</div></pre></td></tr></table></figure>
 <p>输出：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello, my name is es6.</div></pre></td></tr></table></figure>
@@ -49,13 +47,11 @@
 <blockquote>
 <p>空格和换行都会被保留</p>
 </blockquote>
-<p>##Arrow Function</p>
-<p>允许使用 =&gt; 定义函数。</p>
+<h2 id="Arrow-Function"><a href="#Arrow-Function" class="headerlink" title="Arrow Function"></a>Arrow Function</h2><p>允许使用 =&gt; 定义函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x =&gt; x+<span class="number">1</span></div></pre></td></tr></table></figure>
 <p>等同于匿名函数</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> x + <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###作用域</p>
-<blockquote>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><blockquote>
 <p>这个箭头函数的作用域和其他函数有一些不同,如果不是严格模式，<code>this</code>关键字就是指向<code>window</code>，<strong>严格模式</strong>就是<code>undefined</code>，在构造函数里的<code>this</code>指向的是当前对象实例,如果<code>this</code>在一个对象的函数内则<code>this</code>指向的是这个对象</p>
 </blockquote>
 <p>以下结果我也不知道咋回事</p>
@@ -64,22 +60,18 @@
 <p>箭头函数会自动绑定 this 为定义时所在的上下文 ，而不是执行时候的上下文。</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">"Some Function"</span>;</div><div class="line"></div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'name is %s'</span>,<span class="keyword">this</span>.name);</div><div class="line">    &#125;,<span class="number">0</span>);</div><div class="line"></div><div class="line">    setTimeout(()=&gt;&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'name is %s'</span>,<span class="keyword">this</span>.name);</div><div class="line">    &#125;,<span class="number">0</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">doSomething();</div><div class="line"></div><div class="line"><span class="comment">//name is undefined</span></div><div class="line"><span class="comment">//name is Some Function</span></div></pre></td></tr></table></figure>
-<p>##Promise</p>
-<blockquote>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><blockquote>
 <p>先mark在这，以后填坑</p>
 </blockquote>
-<p>##Generator</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> *<span class="title">gen</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'world'</span>;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> iter = gen();</div><div class="line"><span class="keyword">var</span> a = iter.next();</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123;value:'hello', done:false&#125;</span></div><div class="line"><span class="keyword">var</span> b = iter.next();</div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// &#123;value:'world', done:false&#125;</span></div><div class="line"><span class="keyword">var</span> c = iter.next();</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// &#123;value:true, done:true&#125;</span></div></pre></td></tr></table></figure>
+<h2 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> *<span class="title">gen</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'hello'</span>;</div><div class="line">    <span class="keyword">yield</span> <span class="string">'world'</span>;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> iter = gen();</div><div class="line"><span class="keyword">var</span> a = iter.next();</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123;value:'hello', done:false&#125;</span></div><div class="line"><span class="keyword">var</span> b = iter.next();</div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// &#123;value:'world', done:false&#125;</span></div><div class="line"><span class="keyword">var</span> c = iter.next();</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// &#123;value:true, done:true&#125;</span></div></pre></td></tr></table></figure>
 <p>留坑，没看完。。。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;##let and const&lt;/p&gt;
-&lt;blockquote&gt;
+      &lt;h2 id=&quot;let-and-const&quot;&gt;&lt;a href=&quot;#let-and-const&quot; class=&quot;headerlink&quot; title=&quot;let and const&quot;&gt;&lt;/a&gt;let and const&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;函数级作用域&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;
+&lt;/
     
     </summary>
     
