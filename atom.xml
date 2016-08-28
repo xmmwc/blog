@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xmmwc.github.io/"/>
-  <updated>2016-08-28T06:12:56.000Z</updated>
+  <updated>2016-08-28T14:32:38.000Z</updated>
   <id>http://xmmwc.github.io/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6记一下</title>
+    <link href="http://xmmwc.github.io/2016/08/28/ES6%E8%AE%B0%E4%B8%80%E4%B8%8B/"/>
+    <id>http://xmmwc.github.io/2016/08/28/ES6记一下/</id>
+    <published>2016-08-28T14:32:17.000Z</published>
+    <updated>2016-08-28T14:32:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>##let and const</p>
+<blockquote>
+<p>函数级作用域</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function test() &#123;</div><div class="line">  var hello = &apos;world&apos;;</div><div class="line">  console.log(hello);</div><div class="line">&#125;</div><div class="line">test(); // &apos;world&apos;</div><div class="line">console.log(hello); // Error: hello is not defined</div></pre></td></tr></table></figure>
+<blockquote>
+<p>块级作用域</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if(true) &#123;</div><div class="line">  var hello = &apos;world&apos;;</div><div class="line">  console.log(hello); // &apos;world&apos;</div><div class="line">&#125;</div><div class="line">console.log(hello); // &apos;world&apos;</div></pre></td></tr></table></figure>
+<h3 id="var-命令"><a href="#var-命令" class="headerlink" title="var 命令"></a>var 命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if(true) &#123;</div><div class="line">  var hello = &apos;world&apos;;</div><div class="line">  console.log(hello); // &apos;world&apos;</div><div class="line">&#125;</div><div class="line">console.log(hello); // &apos;world&apos;</div></pre></td></tr></table></figure>
+<h3 id="let-命令"><a href="#let-命令" class="headerlink" title="let 命令"></a>let 命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if(true) &#123;</div><div class="line">  let hello = &apos;world&apos;;</div><div class="line">  console.log(hello); // &apos;world&apos;</div><div class="line">&#125;</div><div class="line">console.log(hello); // Error: hello is not defined</div></pre></td></tr></table></figure>
+<h3 id="const-命令"><a href="#const-命令" class="headerlink" title="const 命令"></a>const 命令</h3><p>使用 const 命令声明常量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const STATUS_NOT_FOUND = 404;</div></pre></td></tr></table></figure>
+<p>常量的值为只读，不能修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">STATUS_NOT_FOUND = 200;</div><div class="line">// SyntaxError: &quot;STATUS_NOT_FOUND&quot; is read-only</div></pre></td></tr></table></figure>
+<p>##Template String</p>
+<p>传统的字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var name = &apos;es6&apos;;</div><div class="line"></div><div class="line">var sayhello = &apos;hello, \</div><div class="line">my name is &apos; + name + &apos;.&apos;;</div><div class="line"></div><div class="line">console.log(sayhello);</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hello, my name is es6.</div></pre></td></tr></table></figure>
+<p>ES6 模板字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var name = &apos;es6&apos;;</div><div class="line"></div><div class="line">var sayhello = `hello,</div><div class="line">my name is $&#123;name&#125;.`;</div><div class="line"></div><div class="line">console.log(sayhello);</div></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hello,</div><div class="line">my name is es6.</div></pre></td></tr></table></figure>
+<blockquote>
+<p>空格和换行都会被保留</p>
+</blockquote>
+<p>##Arrow Function</p>
+<p>允许使用 =&gt; 定义函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x =&gt; x+1</div></pre></td></tr></table></figure>
+<p>等同于匿名函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function (x) &#123;</div><div class="line">  return x + 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###作用域</p>
+<blockquote>
+<p>这个箭头函数的作用域和其他函数有一些不同,如果不是严格模式，<code>this</code>关键字就是指向<code>window</code>，<strong>严格模式</strong>就是<code>undefined</code>，在构造函数里的<code>this</code>指向的是当前对象实例,如果<code>this</code>在一个对象的函数内则<code>this</code>指向的是这个对象</p>
+</blockquote>
+<p>以下结果我也不知道咋回事</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&quot;use strict&quot;;</div><div class="line"></div><div class="line">let someObject = &#123;</div><div class="line">    name:&apos;this is name&apos;,</div><div class="line">    someFunc:function()&#123;</div><div class="line">        return this.name;</div><div class="line">    &#125;,</div><div class="line">    someArrowFunc:()=&gt;&#123;</div><div class="line">        return this.name;</div><div class="line">    &#125;,</div><div class="line">    someCallBackFunc:function(callback)&#123;</div><div class="line">        callback.bind(this)();</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">console.log(&apos;name is %s&apos;,someObject.someFunc());</div><div class="line">console.log(&apos;name is %s&apos;,someObject.someArrowFunc());</div><div class="line"></div><div class="line">someObject.someCallBackFunc(function()&#123;</div><div class="line">    console.log(&apos;name is %s&apos;,this.name);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">someObject.someCallBackFunc(()=&gt;&#123;</div><div class="line">    console.log(&apos;name is %s&apos;,this.name);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">//name is this is name</div><div class="line">//name is undefined</div><div class="line">//name is this is name</div><div class="line">//name is undefined</div></pre></td></tr></table></figure>
+<blockquote>
+<p>箭头函数会自动绑定 this 为定义时所在的上下文 ，而不是执行时候的上下文。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function doSomething()&#123;</div><div class="line">    this.name = &quot;Some Function&quot;;</div><div class="line"></div><div class="line">    setTimeout(function()&#123;</div><div class="line">        console.log(&apos;name is %s&apos;,this.name);</div><div class="line">    &#125;,0);</div><div class="line"></div><div class="line">    setTimeout(()=&gt;&#123;</div><div class="line">        console.log(&apos;name is %s&apos;,this.name);</div><div class="line">    &#125;,0);</div><div class="line">&#125;</div><div class="line"></div><div class="line">doSomething();</div><div class="line"></div><div class="line">//name is undefined</div><div class="line">//name is Some Function</div></pre></td></tr></table></figure>
+<p>##Promise</p>
+<blockquote>
+<p>先mark在这，以后填坑</p>
+</blockquote>
+<p>##Generator</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function *gen() &#123;</div><div class="line">    yield &apos;hello&apos;;</div><div class="line">    yield &apos;world&apos;;</div><div class="line">    return true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var iter = gen();</div><div class="line">var a = iter.next();</div><div class="line">console.log(a); // &#123;value:&apos;hello&apos;, done:false&#125;</div><div class="line">var b = iter.next();</div><div class="line">console.log(b); // &#123;value:&apos;world&apos;, done:false&#125;</div><div class="line">var c = iter.next();</div><div class="line">console.log(c); // &#123;value:true, done:true&#125;</div></pre></td></tr></table></figure>
+<p>留坑，没看完。。。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##let and const&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;函数级作用域&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div clas
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>MarkDown</title>
